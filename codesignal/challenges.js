@@ -14,3 +14,28 @@ function checkPalindrome(inputString) {
 
     return true;
 }
+
+function adjacentElementsProduct(inputArray) {
+    let largest;
+
+    for (let i = 0; i < inputArray.length - 1; i++) {
+        const product = inputArray[i] * inputArray[i + 1];
+
+        if (!largest || product > largest) {
+            largest = product;
+        }
+    }
+
+    return largest;
+}
+
+function shapeArea(n) {
+    if (n === 1) {
+        return n;
+    }
+
+    const side = n - 1;
+    const perimeter = side * 4;
+
+    return shapeArea(side) + perimeter;
+}
